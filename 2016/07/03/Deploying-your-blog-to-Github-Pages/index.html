@@ -8,19 +8,20 @@
 
 <title>
   
-    Archive: 2016
+    Deploying your blog to Github Pages with a custom CNAME
   
 </title>
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog.petarkolaric.com">
-<meta property="og:url" content="blog.petarkolaric.com/archives/2016/index.html">
+<meta name="description" content="In this post, I will show how to use Hexo to deploy straight to github using Hexo’s inbuilt deploy mechanism. I chose Github Pages because it is both easy to use as well as being free. Github Pages no">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploying your blog to Github Pages with a custom CNAME">
+<meta property="og:url" content="blog.petarkolaric.com/2016/07/03/Deploying-your-blog-to-Github-Pages/index.html">
 <meta property="og:site_name" content="blog.petarkolaric.com">
-<meta property="og:description">
+<meta property="og:description" content="In this post, I will show how to use Hexo to deploy straight to github using Hexo’s inbuilt deploy mechanism. I chose Github Pages because it is both easy to use as well as being free. Github Pages no">
+<meta property="og:updated_time" content="2016-07-03T13:00:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog.petarkolaric.com">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Deploying your blog to Github Pages with a custom CNAME">
+<meta name="twitter:description" content="In this post, I will show how to use Hexo to deploy straight to github using Hexo’s inbuilt deploy mechanism. I chose Github Pages because it is both easy to use as well as being free. Github Pages no">
 
 
   <link rel="alternative" href="/atom.xml" title="blog.petarkolaric.com" type="application/atom+xml">
@@ -131,43 +132,26 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-Deploying-your-blog-to-Github-Pages" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Deploying your blog to Github Pages with a custom CNAME
+    </h1>
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2016" class="archive-year">2016</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2016/07/03/Deploying-your-blog-to-Github-Pages/" >
-  Deploying your blog to Github Pages with a custom CNAME
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2016/07/03/Deploying-your-blog-to-Github-Pages/"><span class="article-date">
+  <div class="article-info">
+    <span class="article-date">
   2016-07-03
 </span>
-</a>
-        
 
-        
+    
 
-      </div>
-      <div class="article-entry">
-        
-          <p>In this post, I will show how to use Hexo to deploy straight to github using Hexo’s inbuilt deploy mechanism. I chose Github Pages because it is both easy to use as well as being free. Github Pages now uses https by default for all new sites, however this does not extend to using custom CNAMEs. If you decide you want https for your site (as you should), you can either choose to use the standard Github CNAME, using a URL that looks like <a href="https://myusername.github.io" target="_blank" rel="external">https://myusername.github.io</a>, or you can use a service like Cloudflare to add ssl to your site. I (for the time being) am not using https, but will probably look into doing this in the future.</p>
+    
+
+  </div>
+  <div class="article-entry">
+    <p>In this post, I will show how to use Hexo to deploy straight to github using Hexo’s inbuilt deploy mechanism. I chose Github Pages because it is both easy to use as well as being free. Github Pages now uses https by default for all new sites, however this does not extend to using custom CNAMEs. If you decide you want https for your site (as you should), you can either choose to use the standard Github CNAME, using a URL that looks like <a href="https://myusername.github.io" target="_blank" rel="external">https://myusername.github.io</a>, or you can use a service like Cloudflare to add ssl to your site. I (for the time being) am not using https, but will probably look into doing this in the future.</p>
 <h2 id="Deploying-to-Github-Pages"><a href="#Deploying-to-Github-Pages" class="headerlink" title="Deploying to Github Pages"></a>Deploying to Github Pages</h2><p>The first thing you will need when deploying to Github Pages to actually create your repository! You can find detailed instructions for this <a href="https://pages.github.com" target="_blank" rel="external">here</a>, but in reality all you really need to do is create a new repository with the name “myusername.github.io” (where myusername is your username). Once you have done this, all static web page content you push to this new repository should automatically be available at <a href="https://myusername.github.io" target="_blank" rel="external">https://myusername.github.io</a>. You can test this out by pushing any old html file to the repository, and trying to connect to it.</p>
 <p>The next step is to add the Hexo git deployer package to your project.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure></p>
 <p>And to also add the following to your _config.yaml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: https://github.com/myusername/myusername.github.io.git</span><br></pre></td></tr></table></figure></p>
@@ -178,64 +162,29 @@
 <h2 id="Using-a-custom-CNAME"><a href="#Using-a-custom-CNAME" class="headerlink" title="Using a custom CNAME"></a>Using a custom CNAME</h2><p>Using a custom CNAME is also pretty straightforward. You can do this by first adding hexo-generator-cname:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-cname --save</span><br></pre></td></tr></table></figure></p>
 <p>As well as this, you will also need to set the url key to your custom CNAME in the _config.yaml, as this is where the utility gets the CNAME from. All this tool actually does is creates a file during the generate process called CNAME, that contains the custom CNAME inside. When pushed to the repository, Github picks up this file, and uses it to route request to that URL (presumably using the host header) to the correct Github Pages site.</p>
 
-        
-      </div>
-    </div>
-
-  
-
-  
-  
+  </div>
+  <footer class="article-footer">
     
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2016/06/18/Setting-up-your-blog-with-Hexo-and-Github-Pages/" >
-  Setting up your blog with Hexo and Github Pages
-</a>
-
-      </h3>
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.e" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
       
-
-      <div class="article-info">
-        <a href="/2016/06/18/Setting-up-your-blog-with-Hexo-and-Github-Pages/"><span class="article-date">
-  2016-06-18
-</span>
-</a>
+          <img src="/images/cc/by.png">
         
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
 
-        
 
-      </div>
-      <div class="article-entry">
-        
-          <p>In this post, we will explore how to create a blog using Hexo. In a future post, we will cover how to deploy your blog to Github Pages, and how to use a custom domain.</p>
-<p>We will be doing this using two different tools to accomplish this:</p>
-<ul>
-<li><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a></li>
-<li><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a></li>
-</ul>
-<h2 id="What-is-Hexo"><a href="#What-is-Hexo" class="headerlink" title="What is Hexo?"></a>What is Hexo?</h2><p>Hexo is a free, open source tool (using the MIT License) for generating static blog pages. It supports various plugins and themes, and is generally much, much easier than writing the HTML and JavaScript for your site yourself. There are a few different tools that do the same thing, such as Jekyll or Hugo. I chose Hexo primarily because I am more familiar with Node than with either Ruby or Go. If you haven’t used Node before, don’t worry - the use of Node here is quite trivial and doesn’t require any in depth knowledge.</p>
-<p>Hexo uses markdown files from which it generates your sites static content, so if you ever decide you want to move to a different tool you should be able to use your existing markdown files without too much hassle.</p>
-<h2 id="Getting-your-Hexo-project-set-up"><a href="#Getting-your-Hexo-project-set-up" class="headerlink" title="Getting your Hexo project set up"></a>Getting your Hexo project set up</h2><p>To initially install Hexo onto your system, you will need to install the Hexo command line tool:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
-<p>After this has finished, you will be able to initalise new Hexo projects on your machine. To do this, CD to where you want to create your new Hexo project, and run:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init my-blog</span><br><span class="line">$ cd my-blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<p>This creates a new directory, called my-blog, which will contain everything you need to start generating your static assets. This project is just a node project, and as such has an associated package.json, which contains all of your projects dependencies which npm will install.</p>
-<p>You can verify that everything has worked by running<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
-<p>in your browser. If everything has gone to plan, then navigating to <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> in your browser should show your brand new blog!</p>
-<p>You may notice which you do this, however, that there are several things on your blog that don’t look right. Take for example the name of your blog - you probably don’t want to call your blog “Hexo”. Open the file _config.json in your favourite editor, and start personalising your blog :) You may also want to install a different theme to the default. This can be done by finding a theme that you like, cloning it to the themes directory, and setting it in the _config.json file. Please note - themes require their own configuration, and will likely contain another _config.json file which you will need to edit.</p>
-<p>There you have it! Your new blog. There are only two problems with it:</p>
-<ol>
-<li>There isn’t any content!</li>
-<li>You aren’t hosting it anywhere, meaning only you can see it!</li>
-</ol>
-<p>The first problem is easy enough to fix - start writing some new posts! The second problem is just as easy (probably even easier) to fix, using Github Pages. I will cover how to deploy your site to Github Pages in the next post.</p>
+    
 
-        
-      </div>
-    </div>
+  </footer>
+</article>
 
-  
 
 
 
